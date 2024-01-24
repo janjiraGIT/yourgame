@@ -1,35 +1,20 @@
 package com.janjira.yourgame.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@Table(name = "member")
 public class Member {
-    private String memberId;
-    private String memberName;
+    @Id
+    @Column(name = "id")
+    private Long id;
 
-    public String getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(String memberId) {
-        this.memberId = memberId;
-    }
-
-    public String getMemberName() {
-        return memberName;
-    }
-
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
-    }
-
-    public Member(String memberId, String memberName) {
-        this.memberId = memberId;
-        this.memberName = memberName;
-    }
-
-    @Override
-    public String toString() {
-        return "Member{" +
-                "memberId='" + memberId + '\'' +
-                ", memberName='" + memberName + '\'' +
-                '}';
-    }
+    @Column(name = "name")
+    private String name;
 }
